@@ -1,6 +1,6 @@
 # Tokensale Dashboard
 
-![This is an implementation of the Nova Tokensale utilizing the code found in this repository.  You can see it at work at app.novatokensale.com](https://i.imgur.com/dPlB05G.png)
+![This is an implementation of the Nova Tokensale utilizing the code found in this repository.  You can see it at work at app.novatokensale.com](assets/nova-ico.jpg)
 
 [Working Example](https://app.novatokensale.com)
 
