@@ -1,0 +1,7 @@
+.errorMsgStyle span {
+  color: red;
+  top: 0px;
+  position: relative;
+  font-size: 12px;
+  z-index: 99;
+}
