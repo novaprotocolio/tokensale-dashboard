@@ -19,12 +19,12 @@ const getAddressFromContract = contract => {
 };
 
 if (!tokenSaleAddress) {
-  const tokenSale = require('../../contracts/build/contracts/TokenSale.json');
+  const tokenSale = require('../../tokensale-contracts/build/contracts/TokenSale.json');
   tokenSaleAddress = getAddressFromContract(tokenSale);
 }
 
 if (!novaTokenAddress) {
-  const novaToken = require('../../contracts/build/contracts/NovaToken.json');
+  const novaToken = require('../../tokensale-contracts/build/contracts/NovaToken.json');
   novaTokenAddress = getAddressFromContract(novaToken);
 }
 
