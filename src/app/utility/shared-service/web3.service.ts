@@ -8,6 +8,13 @@ import * as Web3 from 'web3';
 import * as Tx from 'ethereumjs-tx';
 // var Tx = require('ethereumjs-tx');
 
+declare global {
+  interface Window {
+    web3: any;
+    myweb3: any;
+  }
+}
+
 @Injectable()
 export class Web3Service {
   constructor(private sharedService: SharedService) {
@@ -26,9 +33,18 @@ export class Web3Service {
     if (typeof this.web3 !== 'undefined') {
       return new Web3(this.web3.currentProvider);
     } else {
+      // if (BaseUrl.MAIN_NET_WEB3) {
       this.web3 = new Web3(
         new Web3.providers.HttpProvider(BaseUrl.MAIN_NET_WEB3)
       );
+      // }
+      // else if (typeof window.web3 !== 'undefined') {
+      //   this.web3 = new Web3(window.web3.currentProvider);
+      // } else {
+      // }
+      window.myweb3 = this.web3;
+      // console.log(this.web3);
+
       // this.web3.eth.net.isListening().then(console.log);
       this.contractObj = new this.web3.eth.Contract(
         Contract.CONTRACT_ABI,
@@ -94,6 +110,7 @@ export class Web3Service {
     return new Observable(obs => {
       this.web3.eth.getBalance(address).then(
         wieBalance => {
+          console.log(wieBalance);
           try {
             if (!wieBalance) {
               obs.error('0');

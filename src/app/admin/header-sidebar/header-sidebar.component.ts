@@ -168,7 +168,7 @@ export class HeaderSidebarComponent implements OnInit {
       },
       error => {
         // this.etherBalance = error;
-        //console.log(error);
+        console.log(error);
       }
     );
   }

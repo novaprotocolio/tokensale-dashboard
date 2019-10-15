@@ -126,7 +126,6 @@ export class SharedService {
   setUser(value: User): void {
     this._storage.setItem(APPStorage.USER, JSON.stringify(value));
     this._user = value;
-    //console.log(this._user);
     this.isProfileUpdated.next(true);
   }
 
@@ -186,7 +185,7 @@ export class SharedService {
   }
 
   trackMixPanelEvent(value) {
-    console.log('Yes', value);
+    console.log(value);
     // mixpanel.track(value);
   }
 }
